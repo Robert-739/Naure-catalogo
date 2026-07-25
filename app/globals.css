@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Amiri", serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0908;
+  color: #f0e6d2;
+}
+
+/* Textura de pedra escura com veios/pontos dourados — mesma linguagem do
+   logo (mármore preto rachado com traços de ouro) feita só em CSS/SVG,
+   sem depender de nenhuma imagem, o que mantém a performance alta. */
+.marble-texture {
+  background-color: #0a0908;
+  background-image:
+    linear-gradient(180deg, rgba(10, 9, 8, 0.55), rgba(10, 9, 8, 0.8)),
+    url("/textures/hero-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Divisor ornamental — reaproveita o mesmo motivo do logo (losango entre
+   dois traços finos) usado como assinatura visual do site inteiro. */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  height: 1px;
+  width: 3rem;
+  background: linear-gradient(90deg, transparent, #c9a355, transparent);
+}
+.ornament-divider .diamond {
+  width: 6px;
+  height: 6px;
+  background: #c9a355;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* Moldura de canto sutil para os cards de perfume — remete a molduras de
+   frascos de ourivesaria árabe, sem exagerar em ornamento. */
+.corner-frame {
+  position: relative;
+}
+.corner-frame::before,
+.corner-frame::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #c9a355;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.corner-frame::before {
+  top: 8px;
+  left: 8px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+.corner-frame::after {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+.corner-frame:hover::before,
+.corner-frame:hover::after,
+.corner-frame:focus-within::before,
+.corner-frame:focus-within::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
