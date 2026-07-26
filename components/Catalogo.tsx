@@ -67,7 +67,7 @@ export default function Catalogo({ perfumes }: { perfumes: Perfume[] }) {
         ))}
       </div>
 
-      <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4">
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6 lg:grid-cols-4">
         {/* Adicionado o parâmetro 'index' no loop */}
         {lista.map((p, index) => (
           <PerfumeCard

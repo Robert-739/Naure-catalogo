@@ -51,7 +51,7 @@ export default function PerfumeCard({
   return (
     <div
       ref={cardRef}
-      className="corner-frame group relative flex flex-col rounded-sm border border-gold/15 bg-noir-soft/60 p-4 transition-colors hover:border-gold/40"
+      className="group relative flex flex-col rounded-sm border border-gold/15 bg-noir-soft/60 p-4 transition-colors hover:border-gold/40"
     >
       <button
         type="button"
@@ -63,13 +63,14 @@ export default function PerfumeCard({
         <div className="mx-auto aspect-square w-full max-w-[220px] overflow-hidden rounded-sm bg-noir/30 border border-gold/10 group-hover:border-gold/30 transition-colors flex flex-col">
           <div className="relative flex-1 p-2">
             <Image
-              src={perfume.imagem}
-              alt={perfume.nome}
-              fill
-              priority={priority}
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 220px"
-              className="object-contain transition-transform duration-500 group-hover:scale-105"
-            />
+                src={perfume.imagem}
+                alt={perfume.nome}
+                fill
+                unoptimized
+                priority={priority}
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 220px"
+                className="object-contain transition-transform duration-500 group-hover:scale-105"
+              />
           </div>
 
           <div className="relative z-10 bg-gold/5 backdrop-blur-sm border-t border-gold/10 py-1.5 text-center transition-colors group-hover:bg-gold/10">

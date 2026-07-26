@@ -55,6 +55,7 @@ export default function PerfumeModal({ perfume, selecionado, onFechar, onAlterna
               alt={perfume.nome}
               fill
               sizes="(max-width: 640px) 80vw, 260px"
+              unoptimized
               priority
               loading="eager"
               className="object-contain"
