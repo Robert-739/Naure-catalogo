@@ -1,19 +1,3 @@
-// ─────────────────────────────────────────────────────────────────
-// CATÁLOGO NAURE — dados dos perfumes
-//
-// Este é o ÚNICO arquivo que precisa ser editado para atualizar o
-// catálogo (preço, notas olfativas, descrição, família e gênero).
-// Não é necessário mexer em nenhum outro arquivo do projeto.
-//
-// As notas, descrição, concentração, volume e gênero foram extraídos
-// dos prints de especificação do fornecedor que vieram com as fotos.
-// Como a formatação dos prints varia entre produtos, vale conferir
-// esses dados antes de publicar — principalmente os de letra mais
-// apertada. O único campo que NÃO vem do fornecedor é o preço
-// (`precoCentavos`), que é decisão de vocês — está zerado, marcado
-// como "PREENCHER" no site até vocês definirem os valores.
-// ─────────────────────────────────────────────────────────────────
-
 export type Familia =
   | "Amadeirado"
   | "Doce"
@@ -25,11 +9,10 @@ export type Familia =
 export type Genero = "Masculino" | "Feminino" | "Unissex";
 
 export interface Perfume {
-  /** slug único, usado na URL da imagem — não alterar */
   id: string;
   nome: string;
   imagem: string;
-  precoCentavos: number; // preço em centavos, ex: 18990 = R$ 189,90 — PREENCHER
+  precoCentavos: number;
   mililitros: number;
   genero: Genero;
   familia: Familia;

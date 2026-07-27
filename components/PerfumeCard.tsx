@@ -21,7 +21,6 @@ export default function PerfumeCard({
 }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Função de pré-carregamento na memória
   const precarregarImagemModal = () => {
     if (typeof window !== "undefined" && perfume.imagem) {
       const img = new window.Image();
@@ -35,10 +34,10 @@ export default function PerfumeCard({
       
       if (entries[0]?.isIntersecting) {
         precarregarImagemModal();
-        observer.disconnect(); // Baixa uma única vez e para de observar
+        observer.disconnect(); 
       }
     },
-    { rootMargin: "200px" } // Começa a baixar 200px antes de o card aparecer na tela
+    { rootMargin: "200px" } 
   );
 
   if (cardRef.current) {

@@ -16,9 +16,6 @@ body {
   color: #f0e6d2;
 }
 
-/* Textura de pedra escura com veios/pontos dourados — mesma linguagem do
-   logo (mármore preto rachado com traços de ouro) feita só em CSS/SVG,
-   sem depender de nenhuma imagem, o que mantém a performance alta. */
 .marble-texture {
   background-color: #0a0908;
   background-image:
@@ -30,8 +27,6 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Divisor ornamental — reaproveita o mesmo motivo do logo (losango entre
-   dois traços finos) usado como assinatura visual do site inteiro. */
 .ornament-divider {
   display: flex;
   align-items: center;
@@ -53,8 +48,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Moldura de canto sutil para os cards de perfume — remete a molduras de
-   frascos de ourivesaria árabe, sem exagerar em ornamento. */
 .corner-frame {
   position: relative;
 }

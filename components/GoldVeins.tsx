@@ -1,6 +1,3 @@
-// Veios de ouro que "passam pela tela de forma aleatória", como pedido.
-// É um componente de servidor (sem JS no cliente): a animação inteira
-// roda em CSS puro, então não pesa no bundle nem no tempo de interação.
 export default function GoldVeins() {
   const veios = [
     { d: "M -50 120 C 150 80, 300 220, 550 140 S 900 60, 1150 180", delay: "0s", width: 1.4 },

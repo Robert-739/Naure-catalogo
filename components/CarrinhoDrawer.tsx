@@ -16,7 +16,6 @@ export default function CarrinhoDrawer({ itens, aberto, onAbrirFechar, onRemover
 
   return (
     <>
-      {/* Botão flutuante */}
       <button
         type="button"
         onClick={() => onAbrirFechar(true)}
@@ -67,7 +66,7 @@ export default function CarrinhoDrawer({ itens, aberto, onAbrirFechar, onRemover
                 {itens.map((p) => (
                   <li key={p.id} className="flex items-center gap-3 border-b border-gold/10 pb-3">
                     <div className="relative h-14 w-14 shrink-0">
-                      <Image src={p.imagem} alt={p.nome} fill sizes="56px" className="object-contain" />
+                      <Image src={p.imagem} alt={p.nome} fill unoptimized sizes="56px" className="object-contain" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="truncate font-body text-sm text-ivory">{p.nome}</p>

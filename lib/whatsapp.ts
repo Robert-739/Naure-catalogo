@@ -5,7 +5,6 @@ function linkBase(mensagem: string): string {
   return `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensagem)}`;
 }
 
-/** Link para perguntar sobre um único perfume (usado no modal de detalhes) */
 export function linkPerfumeUnico(perfume: Perfume): string {
   const mensagem =
     `Olá! Tenho interesse no perfume *${perfume.nome}* (${perfume.mililitros}ml) ` +
@@ -13,7 +12,6 @@ export function linkPerfumeUnico(perfume: Perfume): string {
   return linkBase(mensagem);
 }
 
-/** Link para enviar a seleção inteira do carrinho de uma vez */
 export function linkSelecao(itens: Perfume[]): string {
   if (itens.length === 0) return linkBase("Olá! Gostaria de saber mais sobre os perfumes NAURE.");
 

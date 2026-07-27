@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   description: "Catálogo de perfumes árabes NAURE. Escolha seus favoritos e feche pelo WhatsApp.",
 
   icons: {
-    icon: "/Logo.png", // Caminho a partir da pasta public
+    icon: "/Logo.png", 
     shortcut: "/Logo.png",
-    apple: "/Logo.png", // Para quando salvarem a página na tela inicial do iPhone
+    apple: "/Logo.png", 
   },
 };   
 
