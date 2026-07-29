@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Amiri, Poppins } from "next/font/google";
 import GoldVeins from "@/components/GoldVeins";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const amiri = Amiri({
   subsets: ["latin"],
@@ -40,4 +41,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
+<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
 

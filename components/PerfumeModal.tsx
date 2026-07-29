@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Perfume, formatarPreco } from "@/data/perfumes";
 import { linkPerfumeUnico } from "@/lib/whatsapp";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface Props {
   perfume: Perfume;
@@ -108,6 +109,7 @@ export default function PerfumeModal({ perfume, selecionado, onFechar, onAlterna
                 href={linkPerfumeUnico(perfume)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => sendGAEvent("event", "contact_whatsapp", { item_name: perfume.nome })}
                 className="inline-flex items-center justify-center border border-gold/50 bg-gold/10 px-4 py-3 font-body text-xs uppercase tracking-wider2 text-gold-bright transition-colors hover:bg-gold/20"
               >
                 Perguntar sobre este no WhatsApp

@@ -5,6 +5,7 @@ import { Perfume, Familia } from "@/data/perfumes";
 import PerfumeCard from "./PerfumeCard";
 import PerfumeModal from "./PerfumeModal";
 import CarrinhoDrawer from "./CarrinhoDrawer";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const FAMILIAS: (Familia | "Todas")[] = [
   "Todas",
@@ -33,12 +34,23 @@ export default function Catalogo({ perfumes }: { perfumes: Perfume[] }) {
   );
 
   function alternarSelecao(id: string) {
-    setSelecionados((atual) => {
-      const novo = new Set(atual);
-      novo.has(id) ? novo.delete(id) : novo.add(id);
-      return novo;
-    });
-  }
+  const perfume = perfumes.find((p) => p.id === id);
+  setSelecionados((atual) => {
+    const novo = new Set(atual);
+    if (novo.has(id)) {
+      novo.delete(id);
+      if (perfume) {
+        sendGAEvent("event", "remove_from_cart", { item_name: perfume.nome });
+      }
+    } else {
+      novo.add(id);
+      if (perfume) {
+        sendGAEvent("event", "add_to_cart", { item_name: perfume.nome, value: perfume.precoCentavos / 100 });
+      }
+    }
+    return novo;
+  });
+}
 
   function remover(id: string) {
     setSelecionados((atual) => {

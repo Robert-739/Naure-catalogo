@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Perfume, formatarPreco } from "@/data/perfumes";
 import { linkSelecao } from "@/lib/whatsapp";
+import { sendGAEvent } from "@next/third-parties/google";
 
 interface Props {
   itens: Perfume[];
@@ -95,6 +96,7 @@ export default function CarrinhoDrawer({ itens, aberto, onAbrirFechar, onRemover
                   href={linkSelecao(itens)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => sendGAEvent("event", "generate_lead", { items: itens.length, value: total / 100 })}
                   className="mt-4 flex items-center justify-center border border-gold/50 bg-gold/10 px-4 py-3 font-body text-xs uppercase tracking-wider2 text-gold-bright transition-colors hover:bg-gold/20"
                 >
                   Enviar seleção no WhatsApp
