@@ -37,10 +37,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <GoldVeins />
         </div>
         <div className="relative z-10">{children}</div>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   );
 }
 
-<GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+
 
